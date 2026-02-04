@@ -29,3 +29,42 @@
     });
 
     searchInput.addEventListener("input", apply);
+
+    const cursor = document.querySelector('.custom-cursor');
+const icon = document.querySelector('.cursor-icon');
+
+let mouseX = 0;
+let mouseY = 0;
+let cursorX = 0;
+let cursorY = 0;
+
+const speed = 0.06; // delay (0.08 = mais lento)
+
+document.addEventListener("mousemove", e => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+});
+
+// animação suave (delay tipo Envato)
+function animateCursor(){
+  cursorX += (mouseX - cursorX) * speed;
+  cursorY += (mouseY - cursorY) * speed;
+
+  cursor.style.left = cursorX + "px";
+  cursor.style.top = cursorY + "px";
+
+  requestAnimationFrame(animateCursor);
+}
+animateCursor();
+
+// ativar efeito ao passar no card;
+
+cards.forEach(card => {
+  card.addEventListener('mouseenter', () => {
+    cursor.classList.add('active');
+  });
+
+  card.addEventListener('mouseleave', () => {
+    cursor.classList.remove('active');
+  });
+});
