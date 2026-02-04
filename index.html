@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#c51e30" />
+  <link rel="stylesheet" href="./estilo.css">
+
+  <title>Blog Santos — Artigos</title>
+  <meta name="description" content="Blog Santos: artigos sobre tecnologia, carreira e ferramentas como Excel, Power BI e programação." />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:title" content="Blog Santos — Artigos" />
+  <meta property="og:description" content="Conteúdos para aprender tecnologia, carreira e ferramentas do mercado." />
+  <meta property="og:image" content="assets/img/blog/powerbi-hero.avif" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" type="image/png" href="assets/img/brand/logo-sg-preta.png" />
+
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="container">
+      <div class="topbar__row">
+        <div class="pill"><span class="dot" aria-hidden="true"></span> Conteúdo do Blog Santos</div>
+        <div class="pill">📍 Ribeirão Preto • Atualizado em 02/02/2026</div>
+      </div>
+    </div>
+  </div>
+
+  <header>
+    <div class="container">
+      <div class="nav">
+        <a class="brand" href="index.html" aria-label="Ir para o início do blog">
+          <img class="brand__logo" src="assets/img/brand/logo-sg-preta.png" alt="Santos Games" width="38" height="38" loading="eager" />
+          <span>Blog <span style="color:var(--red)">Santos</span></span>
+        </a>
+
+        <nav class="menu" aria-label="Menu">
+          <a href="index.html">Home</a>
+          <a href="#artigos">Blog</a>
+          <a href="#">Cursos</a>
+          <a href="#">Contato</a>
+        </nav>
+
+        <a class="btn btn--primary" href="tel:+5516992578710">Ligar agora</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero" aria-label="Destaque do blog">
+      <div class="hero__cover">
+        <div class="hero__content">
+          <h1>Artigos para aprender tecnologia e crescer no mercado</h1>
+          <p>Conteúdos práticos (sem enrolação) sobre ferramentas, carreira e habilidades úteis — com foco em resultados.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="controls" aria-label="Busca e filtros">
+      <div class="search" role="search">
+        <span aria-hidden="true">🔎</span>
+        <input id="searchInput" type="search" placeholder="Buscar no blog (ex.: power bi, excel, programação)..." autocomplete="off" />
+      </div>
+
+      <div class="filter" aria-label="Filtros">
+        <button class="chip" data-filter="todos" aria-pressed="true" type="button">Todos</button>
+        <button class="chip" data-filter="carreira" aria-pressed="false" type="button">Carreira</button>
+        <button class="chip" data-filter="excel" aria-pressed="false" type="button">Excel</button>
+        <button class="chip" data-filter="powerbi" aria-pressed="false" type="button">Power BI</button>
+        <button class="chip" data-filter="programacao" aria-pressed="false" type="button">Programação</button>
+      </div>
+    </div>
+
+    <div class="grid" id="artigos">
+      <section aria-label="Lista de artigos">
+        <div class="cards" id="cards">
+          <article class="card" data-tags="powerbi carreira dados">
+            <div class="card__thumb">
+              <img src="assets/img/blog/powerbi-hero.avif" alt="Power BI" loading="lazy">
+              <div class="badge">Power BI</div>
+            </div>
+            <div class="card__body">
+              <h2 class="card__title">O que é Power BI e para que serve?</h2>
+              <p class="card__desc">Entenda o básico, os usos no mercado e como começar do zero com um passo a passo simples.</p>
+              <div class="card__meta">
+                <span>02/02/2026</span><span>•</span><span>~6 min</span>
+              </div>
+              <div class="card__cta">
+                <a href="post-powerbi.html">Ler artigo →</a>
+                <span style="color:var(--muted);font-size:12px;font-weight:800;">Tecnologia & Carreira</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" data-tags="excel carreira">
+            <div class="card__thumb">
+              <img src="assets/img/blog/powerbi-mobile.png" alt="Excel" loading="lazy">
+              <div class="badge">Excel</div>
+            </div>
+            <div class="card__body">
+              <h2 class="card__title">Excel do zero ao avançado</h2>
+              <p class="card__desc">Um guia direto sobre o que aprender para usar no trabalho e se destacar em entrevistas.</p>
+              <div class="card__meta">
+                <span>Em breve</span><span>•</span><span>~8 min</span>
+              </div>
+              <div class="card__cta">
+                <a href="#" onclick="return false;">Em breve</a>
+                <span style="color:var(--muted);font-size:12px;font-weight:800;">Produtividade</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" data-tags="programacao carreira">
+            <div class="card__thumb">
+              <img src="assets/img/blog/powerbi-hero.avif" alt="Programação" loading="lazy" style="filter:saturate(0.9) contrast(1.05);">
+              <div class="badge">Programação</div>
+            </div>
+            <div class="card__body">
+              <h2 class="card__title">Como começar na programação</h2>
+              <p class="card__desc">O que estudar primeiro, como treinar e como evitar os erros mais comuns de iniciante.</p>
+              <div class="card__meta">
+                <span>Em breve</span><span>•</span><span>~7 min</span>
+              </div>
+              <div class="card__cta">
+                <a href="#" onclick="return false;">Em breve</a>
+                <span style="color:var(--muted);font-size:12px;font-weight:800;">Iniciante</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" data-tags="carreira">
+            <div class="card__thumb">
+              <img src="assets/img/blog/powerbi-mobile.png" alt="Carreira" loading="lazy">
+              <div class="badge">Carreira</div>
+            </div>
+            <div class="card__body">
+              <h2 class="card__title">Como conseguir seu primeiro emprego na área tech</h2>
+              <p class="card__desc">Organização, portfólio e atitude: o que realmente pesa para sair do “zero” e ser contratado.</p>
+              <div class="card__meta">
+                <span>Em breve</span><span>•</span><span>~9 min</span>
+              </div>
+              <div class="card__cta">
+                <a href="#" onclick="return false;">Em breve</a>
+                <span style="color:var(--muted);font-size:12px;font-weight:800;">Mercado</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <aside>
+        <section class="side" aria-label="Mais lidos">
+          <div class="side__pad">
+            <h2 class="side__title">Mais lidos</h2>
+          </div>
+
+          <a class="mini" href="post-powerbi.html">
+            <div class="mini__thumb">
+              <img src="assets/img/blog/powerbi-hero.avif" alt="Power BI" loading="lazy">
+            </div>
+            <div>
+              <strong>O que é Power BI e para que serve?</strong>
+              <span>~6 min</span>
+            </div>
+          </a>
+
+          <a class="mini" href="#" onclick="return false;">
+            <div class="mini__thumb">
+              <img src="assets/img/blog/powerbi-mobile.png" alt="Excel" loading="lazy">
+            </div>
+            <div>
+              <strong>Excel do zero ao avançado</strong>
+              <span>Em breve</span>
+            </div>
+          </a>
+        </section>
+
+        <section class="side cta" aria-label="Chamada para ação">
+          <h2>Quer aprender de verdade?</h2>
+          <p>Faça uma visita/aula experimental e veja como funciona na prática.</p>
+          <a class="btn btn--primary" href="#">Agendar agora</a>
+          <div style="margin-top:10px;font-size:12px;color:rgba(0,0,0,.55);font-weight:800;">
+            Atendimento local • Ribeirão Preto
+          </div>
+        </section>
+
+        <section class="side" aria-label="Tags">
+          <div class="side__pad">
+            <h2 class="side__title">Tags</h2>
+            <div style="display:flex;flex-wrap:wrap;gap:10px;">
+              <span class="pill" style="color:#1d1d1d;border-color:var(--border);background:#fff;">Power BI</span>
+              <span class="pill" style="color:#1d1d1d;border-color:var(--border);background:#fff;">Excel</span>
+              <span class="pill" style="color:#1d1d1d;border-color:var(--border);background:#fff;">Carreira</span>
+              <span class="pill" style="color:#1d1d1d;border-color:var(--border);background:#fff;">Programação</span>
+            </div>
+          </div>
+        </section>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer__row">
+        <div>© 2026 Blog Santos • Todos os direitos reservados</div>
+      </div>
+    </div>
+  </footer>
+  
+  <script src="sla.js"></script>
+
+</body>
+
+</html>
