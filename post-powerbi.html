@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#c51e30" />
   <link rel="icon" type="image/png" href="assets/img/brand/logo-sg-preta.png" />
+  <link rel="stylesheet" href="assets/css/post-powerbi.css">
 
   <title>Blog Santos — O que é Power BI?</title>
   <meta name="description" content="Entenda o que é Power BI, para que serve, como funciona e como começar — em um guia direto ao ponto." />
@@ -18,446 +19,6 @@
   <meta property="og:image" content="assets/img/blog/powerbi-hero.avif" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <style>
-    :root{
-      --red:#c51e30;
-      --dark:#393535;
-      --bg:#f5f5f5;
-      --white:#ffffff;
-      --muted:#6b6767;
-      --border:rgba(57,53,53,.14);
-      --shadow: 0 12px 30px rgba(0,0,0,.08);
-      --radius: 18px;
-      --radius-sm: 12px;
-      --max: 1160px;
-    }
-
-    /* Reset básico */
-    *{ box-sizing:border-box; }
-    html,body{ height:100%; }
-    body{
-      margin:0;
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-      color:var(--dark);
-      background:
-        radial-gradient(1200px 500px at 50% -120px, rgba(197,30,48,.14), transparent 55%),
-        var(--bg);
-      line-height:1.65;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-    }
-    a{ color:inherit; }
-    img{ max-width:100%; display:block; }
-    .container{ max-width:var(--max); margin:0 auto; padding:0 18px; }
-
-    /* Topbar */
-    .topbar{
-      background: var(--dark);
-      color: rgba(255,255,255,.92);
-      font-size: 13px;
-      padding: 10px 0;
-    }
-    .topbar__row{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap: 12px;
-      flex-wrap:wrap;
-    }
-    .pill{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:7px 10px;
-      border:1px solid rgba(255,255,255,.14);
-      border-radius:999px;
-      background: rgba(255,255,255,.06);
-      white-space:nowrap;
-    }
-    .dot{
-      width:8px;height:8px;border-radius:999px;background:var(--red);
-      display:inline-block;
-    }
-
-    /* Header */
-    header{
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      background: rgba(245,245,245,.88);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--border);
-    }
-    .nav{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap: 12px;
-      padding: 16px 0;
-    }
-    .brand{
-      display:flex;
-      align-items:center;
-      gap: 10px;
-      font-weight: 900;
-      letter-spacing: -0.02em;
-      text-decoration:none;
-    }
-    .brand__badge{
-      width: 38px;
-      height: 38px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, var(--red), #ff5b6a);
-      box-shadow: 0 10px 25px rgba(197,30,48,.25);
-    }
-    .menu{
-      display:flex;
-      align-items:center;
-      gap: 18px;
-      font-weight: 700;
-      font-size: 14px;
-      color:#2c2c2c;
-    }
-    .menu a{ text-decoration:none; opacity:.85; }
-    .menu a:hover{ opacity:1; }
-
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap: 10px;
-      padding: 10px 14px;
-      border-radius: 12px;
-      border:1px solid var(--border);
-      background: var(--white);
-      box-shadow: 0 8px 18px rgba(0,0,0,.05);
-      font-weight: 800;
-      font-size: 14px;
-      text-decoration:none;
-    }
-    .btn--primary{
-      border-color: rgba(197,30,48,.25);
-      background: linear-gradient(135deg, var(--red), #ff4457);
-      color: #fff;
-      box-shadow: 0 12px 22px rgba(197,30,48,.25);
-    }
-
-    /* Breadcrumb */
-    .crumbs{
-      padding: 18px 0 0;
-      color: var(--muted);
-      font-size: 13px;
-      display:flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-    .crumbs a{ color: var(--muted); text-decoration:none; }
-    .crumbs a:hover{ color: var(--dark); }
-
-    /* Hero */
-    .hero{
-      margin: 18px 0 26px;
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      border:1px solid var(--border);
-      background: var(--white);
-    }
-    .hero__cover{
-      position: relative;
-      height: 340px;
-
-      /* 1) Troque para uma imagem local (recomendado) */
-      background-image: url("assets/img/blog/powerbi-hero.avif");
-
-      /* 2) Fallback elegante (sem depender de nada externo) */
-      background:
-        linear-gradient(0deg, rgba(57,53,53,.70), rgba(57,53,53,.15)),
-        radial-gradient(900px 500px at 20% 10%, rgba(255,255,255,.20), transparent 55%),
-        linear-gradient(135deg, rgba(197,30,48,.95), rgba(57,53,53,.95));
-      background-size: cover;
-      background-position: center;
-    }
-    .hero__content{
-      position:absolute;
-      inset: 0;
-      display:flex;
-      flex-direction: column;
-      justify-content:flex-end;
-      padding: 26px;
-      gap: 10px;
-      color: #fff;
-    }
-    .kicker{
-      display:inline-flex;
-      align-items:center;
-      gap: 10px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.12);
-      border: 1px solid rgba(255,255,255,.18);
-      width: fit-content;
-      font-size: 13px;
-      font-weight: 800;
-    }
-    .hero h1{
-      margin:0;
-      font-size: 36px;
-      letter-spacing: -0.03em;
-      line-height: 1.08;
-      max-width: 760px;
-    }
-    .meta{
-      display:flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      font-size: 13px;
-      color: rgba(255,255,255,.92);
-    }
-    .meta strong{ color:#fff; }
-
-    /* Grid */
-    .grid{
-      display:grid;
-      grid-template-columns: 1fr 360px;
-      gap: 26px;
-      align-items:start;
-      padding-bottom: 40px;
-    }
-
-    /* Article */
-    article{
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-    }
-    .article__inner{ padding: 26px; }
-
-    .intro{
-      font-size: 16px;
-      color: #2a2a2a;
-      margin: 0;
-    }
-
-    .toc{
-      margin: 18px 0 22px;
-      padding: 16px;
-      border-radius: 14px;
-      border: 1px solid var(--border);
-      background: linear-gradient(180deg, #fff, rgba(245,245,245,.6));
-    }
-    .toc h2{
-      margin: 0 0 10px;
-      font-size: 14px;
-      color: var(--dark);
-      letter-spacing:-.01em;
-    }
-    .toc a{
-      display:block;
-      padding: 8px 10px;
-      border-radius: 10px;
-      color: #333;
-      font-size: 14px;
-      font-weight: 700;
-      text-decoration:none;
-    }
-    .toc a:hover{
-      background: rgba(197,30,48,.08);
-      color: var(--red);
-    }
-
-    .article__inner h2{
-      margin: 26px 0 10px;
-      font-size: 24px;
-      letter-spacing: -0.02em;
-      color:#202020;
-    }
-    .article__inner p{ margin: 10px 0; color:#2d2d2d; }
-    .article__inner ul{ margin: 10px 0 10px 18px; }
-    .article__inner li{ margin: 8px 0; }
-
-    .callout{
-      margin: 22px 0;
-      padding: 18px;
-      border-radius: 16px;
-      border: 1px solid rgba(197,30,48,.18);
-      background: rgba(197,30,48,.06);
-      display:grid;
-      grid-template-columns: 52px 1fr;
-      gap: 14px;
-      align-items:start;
-    }
-    .callout__icon{
-      width: 52px; height: 52px;
-      border-radius: 16px;
-      background: linear-gradient(135deg, var(--red), #ff4457);
-      box-shadow: 0 12px 22px rgba(197,30,48,.22);
-    }
-    .callout strong{ display:block; margin-bottom:4px; }
-
-    .img-block{
-      margin: 22px 0;
-      border-radius: 16px;
-      overflow:hidden;
-      border:1px solid var(--border);
-
-      /* Se você preferir imagem local dentro do artigo:
-         coloque <img src="assets/img/blog/powerbi-dashboard.jpg" ...> no HTML e remova este background. */
-      background:
-        linear-gradient(0deg, rgba(57,53,53,.30), rgba(57,53,53,.08)),
-        radial-gradient(700px 300px at 30% 20%, rgba(255,255,255,.25), transparent 60%),
-        linear-gradient(135deg, rgba(57,53,53,.90), rgba(197,30,48,.90));
-      height: 260px;
-    }
-    .caption{
-      padding: 10px 12px;
-      font-size: 13px;
-      color: var(--muted);
-      background: rgba(245,245,245,.6);
-      border-top: 1px solid var(--border);
-    }
-
-    .next{
-      padding: 18px;
-      border-top: 1px solid var(--border);
-      background: linear-gradient(180deg, rgba(245,245,245,.5), #fff);
-    }
-    .next__row{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-    .next__label{ margin:0; font-size:14px; color:var(--muted); }
-    .next__title{ font-weight: 900; letter-spacing:-.02em; }
-    .next a:hover{ border-color: rgba(197,30,48,.30); color: var(--red); }
-
-    /* Sidebar */
-    aside{ display:flex; flex-direction:column; gap: 16px; }
-
-    .card{
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      overflow:hidden;
-    }
-    .card__pad{ padding: 16px; }
-    .card__title{
-      margin:0 0 10px;
-      font-size:14px;
-      color: var(--dark);
-      letter-spacing:-.01em;
-    }
-
-    .mini{
-      display:grid;
-      grid-template-columns: 72px 1fr;
-      gap: 12px;
-      padding: 12px;
-      border-top: 1px solid var(--border);
-      align-items:center;
-      text-decoration:none;
-    }
-    .mini:first-of-type{ border-top:none; }
-
-    .thumb{
-      width: 72px;
-      height: 56px;
-      border-radius: 12px;
-      overflow:hidden;
-      border: 1px solid var(--border);
-      background:
-        linear-gradient(135deg, rgba(197,30,48,.95), rgba(57,53,53,.95));
-      position: relative;
-    }
-    /* Você pode substituir essas "thumbs" por imagens locais, por exemplo:
-       <img src="assets/img/blog/thumb-excel.jpg" alt="..." />
-       Se fizer isso, apague o pseudo-elemento abaixo. */
-    .thumb::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:
-        radial-gradient(120px 80px at 25% 30%, rgba(255,255,255,.22), transparent 65%),
-        linear-gradient(180deg, transparent 40%, rgba(0,0,0,.28));
-    }
-
-    .mini strong{
-      display:block;
-      font-size: 13px;
-      line-height: 1.25;
-      letter-spacing: -0.01em;
-    }
-    .mini span{
-      font-size: 12px;
-      color: var(--muted);
-    }
-
-    .cta{
-      padding: 16px;
-      background: linear-gradient(135deg, rgba(197,30,48,.12), rgba(255,255,255,.92));
-      border: 1px solid rgba(197,30,48,.22);
-    }
-    .cta h3{ margin:0 0 8px; font-size:16px; }
-    .cta p{ margin:0 0 12px; color:#2d2d2d; font-size:13px; }
-    .cta .btn{ width: 100%; }
-
-    /* Footer */
-    footer{
-      margin-top: 30px;
-      background: var(--dark);
-      color: rgba(255,255,255,.90);
-      padding: 26px 0;
-    }
-    .footer__row{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap: 14px;
-      flex-wrap: wrap;
-      font-size: 13px;
-    }
-
-    /* Mobile */
-    @media (max-width: 980px){
-      .grid{ grid-template-columns: 1fr; }
-      .hero__content{ padding: 18px; }
-      .hero h1{ font-size: 28px; }
-      .menu{ display:none; }
-      .hero__cover{ height: 300px; }
-    }
-  
-    /* Logo no header */
-    .brand__logo{
-      width:38px;
-      height:38px;
-      border-radius:12px;
-      background:#fff;
-      border:1px solid var(--border);
-      box-shadow: 0 8px 18px rgba(0,0,0,.06);
-      object-fit:contain;
-      padding:6px;
-    }
-
-    /* Figuras com imagem + legenda */
-    .figure{
-      margin:22px 0;
-      border-radius:16px;
-      overflow:hidden;
-      border:1px solid var(--border);
-      background:#fff;
-    }
-    .figure img{
-      width:100%;
-      height:auto;
-      display:block;
-    }
-
-</style>
 </head>
 
 <body>
@@ -475,14 +36,14 @@
   <header>
     <div class="container">
       <div class="nav">
-        <a class="brand" href="#">
+        <a class="brand" href="index.html">
           <img class="brand__logo" src="assets/img/brand/logo-sg-preta.png" alt="Santos Games" width="38" height="38" loading="eager" />
-          <span>Santos <span style="color:var(--red)">Tech</span> Blog</span>
+          <span>Blog <span style="color:var(--red)">Santos</span></span>
         </a>
 
         <nav class="menu" aria-label="Menu">
           <a href="./index.html">Home</a>
-          <a href="#">Blog</a>
+          <a href="index.html#artigos">Blog</a>
           <a href="#">Cursos</a>
           <a href="#">Contato</a>
         </nav>
@@ -496,8 +57,8 @@
   <main class="container">
     <!-- Breadcrumb -->
     <div class="crumbs" aria-label="Breadcrumb">
-      <a href="#">Home</a> <span aria-hidden="true">›</span>
-      <a href="#">Blog</a> <span aria-hidden="true">›</span>
+      <a href="index.html">Home</a> <span aria-hidden="true">›</span>
+      <a href="index.html#artigos">Blog</a> <span aria-hidden="true">›</span>
       <span>O que é Power BI?</span>
     </div>
 
@@ -662,12 +223,13 @@
       </aside>
     </div>
   </main>
+  <div class="custom-cursor"><span class="cursor-icon">→</span></div>
 
+  <script src="assets/js/main.js"></script>
   <footer>
     <div class="container">
       <div class="footer__row">
         <div>© 2026 Santos • Todos os direitos reservados</div>
-        <div style="opacity:.9;">Paleta #c51e30 #393535 #f5f5f5</div>
       </div>
     </div>
   </footer>

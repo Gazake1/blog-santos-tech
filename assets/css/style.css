@@ -211,7 +211,7 @@
       left:12px; top:12px;
       padding:8px 10px;
       border-radius:999px;
-      background: rgba(255,255,255,.14);
+      background: rgba(0, 0, 0, 0.288);
       border:1px solid rgba(255,255,255,.20);
       color:#fff;
       font-weight: 900;
@@ -501,4 +501,64 @@
   color: black;
   font-size: 20px;
   transform: scale(1.1);
+}
+
+::selection {
+  background: #c51e30; /* vermelho Santos */
+  color: #ffffff;      /* cor do texto selecionado */
+}
+
+::-moz-selection {
+  background: #c51e30;
+  color: #ffffff;
+}
+
+
+
+
+/* Cursor custom (bolinha com delay via JS) */
+body{ cursor:none; }
+
+.custom-cursor{
+  width:18px;
+  height:18px;
+  background:#c51e30;
+  border-radius:999px;
+  position:fixed;
+  left:0;
+  top:0;
+  pointer-events:none;
+  z-index:9999;
+  transform:translate(-50%, -50%);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition: width .2s ease, height .2s ease;
+  box-shadow: 0 10px 24px rgba(197,30,48,.25);
+}
+
+.custom-cursor .cursor-icon{
+  font-size:12px;
+  line-height:1;
+  color:#fff;
+  font-weight:900;
+  transition: color .2s ease, font-size .2s ease, transform .2s ease;
+  transform: translateX(1px);
+}
+
+.custom-cursor.active{
+  width:42px;
+  height:42px;
+}
+
+.custom-cursor.active .cursor-icon{
+  color:#000;
+  font-size:18px;
+  transform: translateX(1px) scale(1.05);
+}
+
+/* Em telas touch, mantém cursor normal */
+@media (hover: none){
+  body{ cursor:auto; }
+  .custom-cursor{ display:none; }
 }
