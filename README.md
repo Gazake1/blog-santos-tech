@@ -1,122 +1,36 @@
-Blog Santos — Website do Blog
+# Blog Santos
 
-Site institucional do Blog Santos, desenvolvido para publicação de conteúdos educacionais sobre tecnologia, informática e carreira, com foco em alunos iniciantes e público local de Ribeirão Preto – SP.
+Website do blog oficial da Santos Tech, desenvolvido para publicação de conteúdos educacionais sobre tecnologia, informática e carreira.
 
-O projeto foi desenvolvido utilizando HTML, CSS e JavaScript puro, priorizando:
+O projeto foi construído com foco em performance, SEO local e simplicidade de manutenção, utilizando apenas tecnologias nativas da web.
 
-Performance
+---
 
-SEO local
+## 📌 Sobre o Projeto
 
-Carregamento rápido
+O Blog Santos tem como objetivo:
 
-Facilidade de manutenção
+- Publicar conteúdos educativos sobre tecnologia
+- Gerar tráfego orgânico via Google
+- Fortalecer a autoridade da Santos Tech em Ribeirão Preto
+- Apoiar a conversão dos cursos presenciais
 
-Baixa dependência tecnológica
+O site foi desenvolvido sem frameworks ou bibliotecas externas, priorizando carregamento rápido e fácil expansão.
 
-📁 Estrutura do Projeto
-Blog/
-├── index.html                # Página inicial (Home do blog)
-├── post-powerbi.html         # Página de artigo
-│
-├── assets/
-│   ├── css/
-│   │   ├── style.css         # Estilos globais
-│   │   └── post-powerbi.css  # Estilos específicos do post
-│   │
-│   ├── js/
-│   │   └── main.js           # Scripts do site (cursor, interações)
-│   │
-│   └── img/
-│       ├── brand/
-│       └── blog/
+---
 
-🎯 Objetivo do Projeto
+## ⚙️ Tecnologias
 
-O Blog Santos foi criado para:
+- HTML5
+- CSS3
+- JavaScript (Vanilla)
 
-Gerar tráfego orgânico via Google (SEO)
+Sem frameworks, sem dependências externas.
 
-Educar o público sobre tecnologia
+---
 
-Apoiar a conversão dos cursos da Santos Tech
+## 🚀 Execução
 
-Criar autoridade regional no segmento educacional
+O projeto é totalmente estático.
 
-⚙️ Tecnologias Utilizadas
-
-HTML5
-
-CSS3
-
-JavaScript Vanilla
-
-Sem frameworks
-
-Sem bibliotecas externas
-
-🚀 Como Executar
-
-Baixe o projeto
-
-Extraia a pasta
-
-Abra o arquivo:
-
-index.html
-
-
-em qualquer navegador moderno.
-
-Não é necessário servidor local.
-
-✏️ Como Criar um Novo Post
-
-Duplique um arquivo existente:
-
-post-powerbi.html
-
-
-Renomeie:
-
-post-excel.html
-
-
-Altere:
-
-título
-
-imagens
-
-conteúdo
-
-meta tags
-
-Adicione o novo card na index.html.
-
-🎨 Identidade Visual
-
-Paleta oficial:
-
-Vermelho: #c51e30
-
-Cinza escuro: #393535
-
-Branco: #f5f5f5
-
-🧠 Diretrizes do Projeto
-
-Evitar dependências externas
-
-Manter código simples e legível
-
-Priorizar velocidade de carregamento
-
-Layout responsivo
-
-Foco em leitura e conversão
-
-📍 Desenvolvido por
-
-Santos Tech
-Ribeirão Preto – SP
+Basta abrir:
