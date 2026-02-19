@@ -88,41 +88,90 @@
     }
 
     /* Hero */
-    .hero{
-      margin: 18px 0 18px;
-      border:1px solid var(--border);
-      border-radius: var(--radius);
-      overflow:hidden;
-      box-shadow: var(--shadow);
-      background: var(--white);
+ /* =========================
+   HERO BLOG COM IMAGEM
+   ========================= */
+
+    .hero-blog {
+      position: relative;
+      width: 100%;
+      min-height: 340px;
+      border-radius: 24px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      padding: 60px 50px;
+      margin-bottom: 40px;
+
+      background-image: url('../img/blog/powerbi-hero.avif'); /* troque pela imagem que quiser */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
-    .hero__cover{
-      position:relative;
-      min-height: 260px;
-      background:
-        linear-gradient(0deg, rgba(57,53,53,.72), rgba(57,53,53,.10)),
-        url("assets/img/blog/powerbi-hero.avif");
-      background-size:cover;
-      background-position:center;
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.75) 0%,
+        rgba(0, 0, 0, 0.55) 50%,
+        rgba(0, 0, 0, 0.35) 100%
+      );
     }
-    .hero__content{
-      position:absolute; inset:0;
-      display:flex; flex-direction:column; justify-content:flex-end;
-      padding: 22px; gap:10px; color:#fff;
+
+    .hero-content {
+      position: relative;
+      max-width: 700px;
+      color: #ffffff;
+      z-index: 2;
     }
-    .hero h1{
-      margin:0;
-      font-size: 34px;
-      letter-spacing:-0.03em;
-      line-height:1.08;
-      max-width: 760px;
+
+    .hero-content h1 {
+      font-size: 38px;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 18px;
     }
-    .hero p{
-      margin:0;
-      color: rgba(255,255,255,.92);
-      max-width: 780px;
-      font-weight: 600;
+
+    .hero-content p {
+      font-size: 18px;
+      opacity: 0.9;
+      line-height: 1.5;
     }
+
+    /* Responsividade */
+
+    @media (max-width: 992px) {
+      .hero-blog {
+        padding: 40px 30px;
+        min-height: 280px;
+      }
+
+      .hero-content h1 {
+        font-size: 28px;
+      }
+
+      .hero-content p {
+        font-size: 16px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .hero-blog {
+        padding: 30px 20px;
+        min-height: 240px;
+      }
+
+      .hero-content h1 {
+        font-size: 22px;
+      }
+
+      .hero-content p {
+        font-size: 14px;
+      }
+    }
+
 
     /* Controls */
     .controls{
@@ -517,11 +566,10 @@
 
 
 /* Cursor custom (bolinha com delay via JS) */
-body{ cursor:none; }
 
 .custom-cursor{
-  width:18px;
-  height:18px;
+  width: 30px;
+  height: 30px;
   background:#c51e30;
   border-radius:999px;
   position:fixed;
@@ -537,23 +585,14 @@ body{ cursor:none; }
   box-shadow: 0 10px 24px rgba(197,30,48,.25);
 }
 
-.custom-cursor .cursor-icon{
-  font-size:12px;
-  line-height:1;
-  color:#fff;
-  font-weight:900;
-  transition: color .2s ease, font-size .2s ease, transform .2s ease;
-  transform: translateX(1px);
-}
-
 .custom-cursor.active{
   width:42px;
   height:42px;
 }
 
 .custom-cursor.active .cursor-icon{
-  color:#000;
-  font-size:18px;
+  color:#ffffff;
+  font-size:25px;
   transform: translateX(1px) scale(1.05);
 }
 

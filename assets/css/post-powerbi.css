@@ -517,11 +517,11 @@
 
 
 /* Cursor custom (bolinha com delay via JS) */
-body{ cursor:none; }
+
 
 .custom-cursor{
-  width:18px;
-  height:18px;
+  width:25px;
+  height:25px;
   background:#c51e30;
   border-radius:999px;
   position:fixed;
@@ -537,23 +537,14 @@ body{ cursor:none; }
   box-shadow: 0 10px 24px rgba(197,30,48,.25);
 }
 
-.custom-cursor .cursor-icon{
-  font-size:12px;
-  line-height:1;
-  color:#fff;
-  font-weight:900;
-  transition: color .2s ease, font-size .2s ease, transform .2s ease;
-  transform: translateX(1px);
-}
-
 .custom-cursor.active{
   width:42px;
   height:42px;
 }
 
 .custom-cursor.active .cursor-icon{
-  color:#000;
-  font-size:18px;
+  color:#ffffff;
+  font-size:25px;
   transform: translateX(1px) scale(1.05);
 }
 
